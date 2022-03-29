@@ -46,6 +46,7 @@ import org.adempiere.webui.event.WTableModelListener;
 import org.adempiere.webui.panel.ADForm;
 import org.adempiere.webui.panel.CustomForm;
 import org.adempiere.webui.panel.IFormController;
+import org.adempiere.webui.util.ZKUpdateUtil;
 import org.adempiere.webui.window.FDialog;
 import org.compiere.model.MAllocationHdr;
 import org.compiere.model.MLookup;
@@ -202,20 +203,24 @@ public class WAllocation extends Allocation
 		row.appendCellChild(dateLabel.rightAlign());
 		row.appendCellChild(dateField.getComponent());
 		row.appendCellChild(organizationLabel.rightAlign());
-		organizationPick.getComponent().setHflex("true");
+		//organizationPick.getComponent().setHflex("true");
+		ZKUpdateUtil.setHflex(organizationPick.getComponent(), "2");
 		row.appendCellChild(organizationPick.getComponent(),1);
 		
 		row = rows.newRow();
 		row.appendCellChild(bpartnerLabel.rightAlign());
-		bpartnerSearch.getComponent().setHflex("true");
+		//(bpartnerSearch.getComponent().setHflex("true");
+		ZKUpdateUtil.setHflex(bpartnerSearch.getComponent(), "2");
 		row.appendCellChild(bpartnerSearch.getComponent(),2);
 		row.appendCellChild(bpartnerLabel2.rightAlign());
-		bpartnerSearch2.getComponent().setHflex("true");
+		//bpartnerSearch2.getComponent().setHflex("true");
+		ZKUpdateUtil.setHflex(bpartnerSearch2.getComponent(), "2");
 		row.appendCellChild(bpartnerSearch2.getComponent(),2);
 		
 		row = rows.newRow();
 		row.appendCellChild(currencyLabel.rightAlign(),1);
-		currencyPick.getComponent().setHflex("true");
+		//currencyPick.getComponent().setHflex("true");
+		ZKUpdateUtil.setHflex(currencyPick.getComponent(), "2");
 		row.appendCellChild(currencyPick.getComponent(),1);		
 		row.appendCellChild(multiCurrency,1);		
 		row.appendCellChild(autoWriteOff,2);
@@ -235,7 +240,8 @@ public class WAllocation extends Allocation
 		differenceField.setHflex("true");
 		row.appendCellChild(differenceField);
 		row.appendCellChild(chargeLabel.rightAlign());
-		chargePick.getComponent().setHflex("true");
+		//chargePick.getComponent().setHflex("true");
+		ZKUpdateUtil.setHflex(chargePick.getComponent(), "2");
 		row.appendCellChild(chargePick.getComponent());
 		allocateButton.setHflex("true");
 		row.appendCellChild(allocateButton);
@@ -267,7 +273,8 @@ public class WAllocation extends Allocation
 		paymentLayout.appendChild(center);
 		center.appendChild(paymentTable);
 		paymentTable.setWidth("99%");
-		paymentTable.setHeight("99%");
+		//paymentTable.setHeight("99%");
+		ZKUpdateUtil.setHeight(paymentTable, "99%");
 		center.setStyle("border: none");
 		
 		north = new North();
@@ -282,7 +289,8 @@ public class WAllocation extends Allocation
 		invoiceLayout.appendChild(center);
 		center.appendChild(invoiceTable);
 		invoiceTable.setWidth("99%");
-		invoiceTable.setHeight("99%");
+		//invoiceTable.setHeight("99%");
+		ZKUpdateUtil.setHeight(invoiceTable, "99%");
 		center.setStyle("border: none");
 		//
 		center = new Center();
@@ -292,8 +300,10 @@ public class WAllocation extends Allocation
 		infoPanel.setVflex("1");
 		
 		infoPanel.setStyle("border: none");
-		infoPanel.setWidth("100%");
-		infoPanel.setHeight("100%");
+		//infoPanel.setWidth("100%");
+		ZKUpdateUtil.setWidth(infoPanel, "100%");
+		//infoPanel.setHeight("100%");
+		ZKUpdateUtil.setHflex(infoPanel, "100%");
 		
 		north = new North();
 		north.setStyle("border: none");
@@ -305,8 +315,10 @@ public class WAllocation extends Allocation
 		center.setStyle("border: none");
 		infoPanel.appendChild(center);
 		center.appendChild(invoicePanel);
-		invoicePanel.setHflex("1");
-		invoicePanel.setVflex("1");
+		//invoicePanel.setHflex("1");
+		//invoicePanel.setVflex("1");
+		ZKUpdateUtil.setHflex(invoicePanel, "1");
+		ZKUpdateUtil.setVflex(invoicePanel, "1");
 	}   //  jbInit
 
 	/**
